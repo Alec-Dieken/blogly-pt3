@@ -4,7 +4,7 @@
 
 
 {% block content %}
-<img src="{{user.img_url}}" width="300px" height="300px">
+<img src="{{user.img_url}}" width="200px">
 <h1>{{user.first_name}} {{user.last_name}}</h1>
 <form action="/users/{{user.id}}/edit">
     <button type="submit">Edit</button>
@@ -12,4 +12,16 @@
 <form action="/users/{{user.id}}/delete" method="post">
     <button type="submit">Delete</button>
 </form>
+
+<h2>Posts</h2>
+
+<ul id="posts">
+    {% for post in posts %}
+    <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="/users/{{user.id}}/posts/new">
+    <button>Add Post</button>
+</a>
 {%endblock%}
