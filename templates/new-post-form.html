@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 
-{% block title%}Users{%endblock%}
+{% block title%}Blogly - Create a Post{%endblock%}
 
 
 {% block content %}
@@ -12,6 +12,11 @@
     <label for="content">Content: </label>
     <textarea id="content" name="content" rows="4" colsl="50"></textarea>
     
+    {%for tag in tags%}
+    <label for="{{tag.name}}">{{tag.name}}</label>
+    <input type="checkbox" id="{{tag.name}}" name="tag" value="{{tag.name}}">
+    {%endfor%}
+
     <button type="submit">Add</button>
 </form>
 {%endblock%}

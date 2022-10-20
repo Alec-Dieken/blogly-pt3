@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block title%}Blogly - Create a Tag{%endblock%}
+
+
+{% block content %}
+<h2>Create a tag</h2>
+<form action="/tags/new" method="post">
+    <label for="tagname">Name: </label>
+    <input id="tagname" type="text" maxlength="25" name="tagname" required />
+    
+    <button type="submit">Add</button>
+</form>
+<a href="/tags">
+    <button>Cancel</button>
+</a>
+{%endblock%}

@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 
-{% block title%}Users{%endblock%}
+{% block title%}Blogly - User ({{user.first_name}} {{user.last_name}}){%endblock%}
 
 
 {% block content %}
@@ -23,5 +23,9 @@
 
 <a href="/users/{{user.id}}/posts/new">
     <button>Add Post</button>
+</a>
+
+<a href="/users">
+    <button>Back to Users</button>
 </a>
 {%endblock%}
